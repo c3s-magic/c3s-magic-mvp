@@ -1,5 +1,7 @@
 FROM climate4impact-portal
 
+VOLUME /data
+
 # install development tools
 #RUN yum clean all && yum makecache && yum update -y && \
 #    yum groupinstall -y "Development tools"
@@ -21,10 +23,10 @@ RUN conda env update -f environment.yml
 
 # install esmvaltool
 #RUN curl -L -O https://github.com/ESMValGroup/ESMValTool/archive/docker.zip
-RUN curl -L -O https://github.com/ESMValGroup/ESMValTool/archive/REFACTORING/esgf-coupling.zip
-RUN unzip esgf-coupling.zip
-WORKDIR /src/ESMValTool-REFACTORING-esgf-coupling
-COPY config_private.xml /src/ESMValTool-REFACTORING-esgf-coupling/config_private.xml
+RUN curl -L -O https://github.com/ESMValGroup/ESMValTool/archive/master.zip
+RUN unzip master.zip
+WORKDIR /src/ESMValTool-master
+COPY config_private.xml /src/ESMValTool-master/config_private.xml
 
 #To get a working env: Set PATH to /miniconda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 

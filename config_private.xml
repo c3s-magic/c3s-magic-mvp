@@ -23,7 +23,7 @@
 		</usrpath>
 
 		<usrpath category="simulation" type="input" id="MODELPATH">
-			<path>/config/</path>
+			<path>/data/in/modeldata</path>
 			<description>root directory of model data</description>
 		</usrpath>
 
